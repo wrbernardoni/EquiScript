@@ -1,0 +1,7 @@
+#ifndef EQUI_CONFIG_H_
+#define EQUI_CONFIG_H_
+
+#define EQUI_VERSION_MAJOR @EquiLang_VERSION_MAJOR@
+#define EQUI_VERSION_MINOR @EquiLang_VERSION_MINOR@
+
+#endif
