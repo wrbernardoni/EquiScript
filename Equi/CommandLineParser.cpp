@@ -1,6 +1,7 @@
 #include "CommandLineParser.h"
 #include "EquiConfig.h"
 
+#include <cstring>
 
 CmdLineArgs ParseArguments(int argc, char* argv[])
 {
