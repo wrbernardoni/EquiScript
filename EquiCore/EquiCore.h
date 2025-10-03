@@ -3,6 +3,9 @@
 
 #include <iostream>
 
+#define EQUI_LOG (*Equi::gLog)
+#define EQUI_ERR (*Equi::gErr)
+
 namespace Equi
 {
 	extern std::ostream* gLog;
