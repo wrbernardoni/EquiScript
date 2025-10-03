@@ -1,5 +1,7 @@
 ## This file should be placed in the root directory of your project.
 ## Then modify the CMakeLists.txt file in the root directory of your
+## This file should be placed in the root directory of your project.
+## Then modify the CMakeLists.txt file in the root directory of your
 ## project to incorporate the testing dashboard.
 ##
 ## # The following are required to submit to the CDash dashboard:
@@ -18,4 +20,3 @@ else()
 endif()
 
 set(CTEST_DROP_SITE_CDASH TRUE)
-

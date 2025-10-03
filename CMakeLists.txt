@@ -14,6 +14,9 @@ project ("EquiLang" VERSION 0.1)
 enable_testing()
 include(CTest)
 
+set(CTEST_DROP_SITE_CDASH TRUE)
+
+
 configure_file(EquiConfig.h.in EquiConfig.h)
 
 # Include sub-projects.
