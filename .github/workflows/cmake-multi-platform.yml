@@ -4,7 +4,7 @@ name: CMake on multiple platforms
 
 on:
   schedule:
-     - cron: "00 12 * * *"
+     - cron: "0 12 * * *"
   push:
     branches: [ "master" ]
   pull_request:
