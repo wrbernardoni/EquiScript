@@ -3,7 +3,7 @@
 #
 
 # Add source to this project's executable.
-add_executable (Equi "Equi.cpp" "Equi.h")
+add_executable (Equi "Equi.cpp" "Equi.h" "CommandLineParser.h" "CommandLineParser.cpp")
 
 target_link_libraries(Equi PUBLIC EquiCore)
 target_include_directories(Equi PUBLIC
@@ -16,3 +16,7 @@ endif()
 
 # Tests
 add_test(NAME Equi.Equi.Runs COMMAND Equi -v)
+add_test(NAME Equi.Equi.Versioning COMMAND Equi -v)
+set_tests_properties(Equi.Equi.Versioning
+  PROPERTIES PASS_REGULAR_EXPRESSION "Equi version ${EquiLang_VERSION_MAJOR}.${EquiLang_VERSION_MINOR}"
+  )
