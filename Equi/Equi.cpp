@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
 
 	if (args.error)
 	{
-		EQUI_ERR << "Error: Command line arguments not properly parsed.\n";
+		EQUI_ERR << "ERROR: Command line arguments not properly parsed.\n";
 		return 1;
 	}
 

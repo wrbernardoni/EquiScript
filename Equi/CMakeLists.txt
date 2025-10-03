@@ -21,3 +21,6 @@ add_test(NAME Equi.Equi.Versioning COMMAND Equi -v)
 set_tests_properties(Equi.Equi.Versioning
   PROPERTIES PASS_REGULAR_EXPRESSION "Equi version ${EquiLang_VERSION_MAJOR}.${EquiLang_VERSION_MINOR}"
   )
+
+add_test(NAME Equi.Equi.BadCommandLine COMMAND Equi -v --badcommandargument)
+set_property(TEST Equi.Equi.BadCommandLine PROPERTY WILL_FAIL TRUE)
