@@ -12,6 +12,7 @@ endif()
 project ("EquiLang" VERSION 0.1)
 
 enable_testing()
+include(CTest)
 
 configure_file(EquiConfig.h.in EquiConfig.h)
 
