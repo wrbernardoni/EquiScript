@@ -4,7 +4,7 @@ name: CMake on multiple platforms
 
 on:
   schedule:
-     - cron: "15 12 * * *"
+     - cron: '15 12 * * *'
   push:
     branches: [ "master" ]
   pull_request:
@@ -99,12 +99,12 @@ jobs:
       working-directory: ${{ steps.strings.outputs.build-output-dir }}
       # Execute tests defined by the CMake configuration. Note that --build-config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
-      if: github.event.schedule == "15 12 * * *"
+      if: github.event.schedule == '15 12 * * *'
       run: ctest -D Nightly --build-config ${{ matrix.build_type }}
       
     - name: Test (Experimental)
       working-directory: ${{ steps.strings.outputs.build-output-dir }}
       # Execute tests defined by the CMake configuration. Note that --build-config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
-      if: github.event.schedule != "15 12 * * *"
+      if: github.event.schedule != '15 12 * * *'
       run: ctest -D Experimental --build-config ${{ matrix.build_type }}
