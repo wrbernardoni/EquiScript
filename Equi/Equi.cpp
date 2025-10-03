@@ -12,10 +12,15 @@ using namespace std;
 int main(int argc, char* argv[])
 {
 	CmdLineArgs args = ParseArguments(argc, argv);
-	
+
+	Equi::CoreSettings coreSettings;
+	coreSettings.log = args.log;
+	coreSettings.errorLog = args.errorLog;
+	Equi::Initialize(coreSettings);
+
 	if (args.error)
 	{
-		*args.errorLog << "Error: Command line arguments not properly parsed.\n";
+		*Equi::gErr << "Error: Command line arguments not properly parsed.\n";
 		return 1;
 	}
 

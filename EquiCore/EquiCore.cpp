@@ -2,8 +2,11 @@
 
 #include <iostream>
 
+std::ostream* Equi::gLog = &std::cout;
+std::ostream* Equi::gErr = &std::cerr;
 
-void Equi::HelloWorld()
+void Equi::Initialize(Equi::CoreSettings settings)
 {
-	std::cout << "Hello world.\n";
+	Equi::gLog = settings.log;
+	Equi::gErr = settings.errorLog;
 }
