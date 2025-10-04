@@ -11,8 +11,9 @@ endif()
 
 project ("EquiLang" VERSION 0.1)
 
-enable_testing()
 include(CTest)
+enable_testing()
+
 
 set(CTEST_DROP_SITE_CDASH TRUE)
 
