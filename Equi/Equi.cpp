@@ -24,5 +24,13 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
+	// TODO: Tokenize input & record debugging info (line nums ect.)
+
+	// TODO: Parse into AST
+
+	// TODO: Turn AST into EquiCode
+
+	// TODO: Run EquiCode on an engine.
+
 	return 0;
 }
