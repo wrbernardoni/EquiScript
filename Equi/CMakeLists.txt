@@ -29,7 +29,7 @@ add_test(NAME Equi.Tokenizer.HelloWorld COMMAND Equi -f ${TESTING_PATH}/Tokenize
 set_tests_properties(Equi.Tokenizer.HelloWorld
   PROPERTIES PASS_REGULAR_EXPRESSION "\\[1\\:1\\]Hello")
 
-add_test(NAME Equi.Tokenizer.IgnoreLineComments COMMAND Equi -f ${TESTING_PATH}/Tokenizer/lineComments.txt -DEBUG_TOKENS)
+add_test(NAME Equi.Tokenizer.IgnoreLineComments COMMAND Equi -f ${TESTING_PATH}/Tokenizer/linecomments.txt -DEBUG_TOKENS)
 set_tests_properties(Equi.Tokenizer.IgnoreLineComments
   PROPERTIES PASS_REGULAR_EXPRESSION "\\[1\\:1\\]hello \\[3\\:1\\]hello")
 
