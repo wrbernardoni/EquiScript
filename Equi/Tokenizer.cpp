@@ -29,7 +29,6 @@ std::vector<Equi::Tokenizer::Token> Equi::Tokenizer::Tokenize(std::istream* inpu
 	std::string tk = "";
 
 	char c;
-	EQUI_LOG << "[1]: ";
 	while (input->get(c))
 	{
 		if (c == '#')
@@ -92,13 +91,7 @@ std::vector<Equi::Tokenizer::Token> Equi::Tokenizer::Tokenize(std::istream* inpu
 			line++;
 			character = 1;
 			startChar = 1;
-			EQUI_LOG << "[" << line << "]: ";
 		}
-	}
-
-	for (int i = 0; i < tokens.size(); i++)
-	{
-		EQUI_LOG << tokens[i].DebugToken() << " ";
 	}
 
 	return tokens;

@@ -25,8 +25,23 @@ int main(int argc, char* argv[])
 		return 1;
 	}
 
+	if (!args.run)
+		return 0;
+
 	// TODO: Tokenize input & record debugging info (line nums ect.)
 	std::vector<Equi::Tokenizer::Token> tokens = Equi::Tokenizer::Tokenize(args.input);
+
+	if (args.dumpTokens)
+	{
+		for (int i = 0; i < tokens.size(); i++)
+		{
+			if (i != 0)
+				EQUI_LOG << " ";
+			EQUI_LOG << tokens[i].DebugToken();
+		}
+
+		return 0;
+	}
 
 	// TODO: Parse into AST
 

@@ -5,7 +5,9 @@
 
 struct CmdLineArgs
 {
+	bool run = true;
 	bool error = false;
+	bool dumpTokens = false;
 	std::istream* input = &std::cin;
 	std::ostream* log = &std::cout;
 	std::ostream* errorLog = &std::cerr;

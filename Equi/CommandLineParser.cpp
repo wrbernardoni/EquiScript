@@ -20,10 +20,17 @@ CmdLineArgs ParseArguments(int argc, char* argv[])
 				break;
 			}
 
+			args.run = false;
+
 			std::cout << "Equi version " << EQUI_VERSION_MAJOR << "."
 				<< EQUI_VERSION_MINOR << std::endl;
 			parsedArgs++;
 			
+		}
+		else if (strcmp(argv[head], "-DEBUG_TOKENS") == 0)
+		{
+			args.dumpTokens = true;
+
 		}
 	}
 
