@@ -3,6 +3,7 @@
 #include "EquiCore.h"
 
 #include <cstring>
+#include <fstream>
 
 CmdLineArgs ParseArguments(int argc, char* argv[])
 {
@@ -31,6 +32,30 @@ CmdLineArgs ParseArguments(int argc, char* argv[])
 		{
 			args.dumpTokens = true;
 
+		}
+		else if (strcmp(argv[head], "-f") == 0)
+		{
+			if (args.input != &std::cin)
+			{
+				std::cerr << "Input file already specified.\n";
+				args.error = true;
+				break;
+			}
+			if (head == argc - 1)
+			{
+				std::cerr << "Need additional input to specify the file to read.\n";
+				args.error = true;
+				break;
+			}
+
+			args.input = new std::ifstream(argv[head+1]);
+			if (!args.input->good())
+			{
+				std::cerr << "Failed to open file" << argv[head + 1] << "\n";
+				args.error = true;
+				break;
+			}
+			head++;
 		}
 	}
 

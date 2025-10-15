@@ -94,6 +94,11 @@ std::vector<Equi::Tokenizer::Token> Equi::Tokenizer::Tokenize(std::istream* inpu
 		}
 	}
 
+	if (tk != "")
+	{
+		tokens.push_back(Equi::Tokenizer::Token(tk, line, startChar));
+	}
+
 	return tokens;
 }
 

@@ -16,6 +16,8 @@ enable_testing()
 
 
 set(CTEST_DROP_SITE_CDASH TRUE)
+list(APPEND CMAKE_CTEST_ARGUMENTS "--output-on-failure --verbose")
+set(TESTING_PATH "${PROJECT_SOURCE_DIR}/TestFiles")
 
 
 configure_file(EquiConfig.h.in EquiConfig.h)

@@ -25,3 +25,7 @@ set_tests_properties(Equi.Equi.Versioning
 add_test(NAME Equi.Equi.BadCommandLine COMMAND Equi -v --badcommandargument)
 set_property(TEST Equi.Equi.BadCommandLine PROPERTY WILL_FAIL TRUE)
 
+add_test(NAME Equi.Tokenizer.HelloWorld COMMAND Equi -f ${TESTING_PATH}/Tokenizer/helloworld.txt -DEBUG_TOKENS)
+set_tests_properties(Equi.Tokenizer.HelloWorld
+  PROPERTIES PASS_REGULAR_EXPRESSION "[1:1]Hello"
+  )
