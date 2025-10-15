@@ -23,7 +23,7 @@ namespace Equi
 
 			std::string DebugToken()
 			{
-				return "[" + std::to_string(lineNum) + ":" + std::to_string(charNum) + "]:" + token;
+				return "[" + std::to_string(lineNum) + ":" + std::to_string(charNum) + "]" + token;
 			}
 		};
 

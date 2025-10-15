@@ -27,5 +27,13 @@ set_property(TEST Equi.Equi.BadCommandLine PROPERTY WILL_FAIL TRUE)
 
 add_test(NAME Equi.Tokenizer.HelloWorld COMMAND Equi -f ${TESTING_PATH}/Tokenizer/helloworld.txt -DEBUG_TOKENS)
 set_tests_properties(Equi.Tokenizer.HelloWorld
-  PROPERTIES PASS_REGULAR_EXPRESSION "[1:1]Hello"
+  PROPERTIES PASS_REGULAR_EXPRESSION "\\[1\\:1\\]Hello")
+
+add_test(NAME Equi.Tokenizer.IgnoreLineComments COMMAND Equi -f ${TESTING_PATH}/Tokenizer/lineComments.txt -DEBUG_TOKENS)
+set_tests_properties(Equi.Tokenizer.IgnoreLineComments
+  PROPERTIES PASS_REGULAR_EXPRESSION "\\[1\\:1\\]hello \\[3\\:1\\]hello")
+
+add_test(NAME Equi.Tokenizer.HarderParse COMMAND Equi -f ${TESTING_PATH}/Tokenizer/harderparse.txt -DEBUG_TOKENS)
+set_tests_properties(Equi.Tokenizer.HarderParse
+  PROPERTIES PASS_REGULAR_EXPRESSION "\\[1:1\\]hi \\[2:1\\]a \\[2:3\\]\\+ \\[2:4\\]b \\[2:7\\]/ \\[2:8\\]c \\[2:10\\]; \\[3:1\\]a \\[3:2\\]\\+ \\[5:1\\]b \\[5:2\\]c"
   )
