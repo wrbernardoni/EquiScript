@@ -6,6 +6,7 @@
 #include "EquiConfig.h"
 #include "EquiCore.h"
 #include "CommandLineParser.h"
+#include "Tokenizer.h"
 
 using namespace std;
 
@@ -25,6 +26,7 @@ int main(int argc, char* argv[])
 	}
 
 	// TODO: Tokenize input & record debugging info (line nums ect.)
+	std::vector<Equi::Tokenizer::Token> tokens = Equi::Tokenizer::Tokenize(args.input);
 
 	// TODO: Parse into AST
 

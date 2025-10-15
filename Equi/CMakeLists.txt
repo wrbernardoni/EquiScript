@@ -3,7 +3,7 @@
 #
 
 # Add source to this project's executable.
-add_executable (Equi "Equi.cpp" "Equi.h" "CommandLineParser.h" "CommandLineParser.cpp")
+add_executable (Equi "Equi.cpp" "Equi.h" "CommandLineParser.h" "CommandLineParser.cpp" "Tokenizer.h" "Tokenizer.cpp")
 
 target_link_libraries(Equi PUBLIC EquiCore)
 target_include_directories(Equi PUBLIC
