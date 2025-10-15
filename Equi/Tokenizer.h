@@ -20,6 +20,11 @@ namespace Equi
 			{
 				token = t;
 			};
+
+			std::string DebugToken()
+			{
+				return "[" + std::to_string(lineNum) + ":" + std::to_string(charNum) + "]:" + token;
+			}
 		};
 
 		std::vector<Token> Tokenize(std::istream* input);
