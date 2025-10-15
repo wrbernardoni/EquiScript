@@ -3,11 +3,16 @@
 #include "EquiCore.h"
 
 #include <ctype.h>
+#include <set>
+
+const std::set<char> PUNCTUATION = {
+	'/','\\','{','}','(',')','.',',','+','-','*','@','>','<',':',';','\`','^','$','%','&','|','=','?','"','\'', '[',']'
+};
 
 // Checks if a token is a punctuation token
 bool IsPunctuation(char c)
 {
-	return false;
+	return PUNCTUATION.count(c) != 0;
 }
 
 std::vector<Equi::Tokenizer::Token> Equi::Tokenizer::Tokenize(std::istream* input)
@@ -68,7 +73,9 @@ std::vector<Equi::Tokenizer::Token> Equi::Tokenizer::Tokenize(std::istream* inpu
 
 			if (IsPunctuation(c))
 			{
-				tokens.push_back(Equi::Tokenizer::Token(std::to_string(c), line, character));
+				tk = "";
+				tk = tk + c;
+				tokens.push_back(Equi::Tokenizer::Token(tk, line, character));
 				tk = "";
 				startChar = character;
 			}
